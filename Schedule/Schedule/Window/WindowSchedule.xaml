@@ -1,0 +1,219 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Schedule.WindowSchedule"
+             BackgroundColor="#F1F1F1">
+    <StackLayout>
+
+        <Frame BackgroundColor="#FFFFFF" VerticalOptions="StartAndExpand" Padding="0" HeightRequest="60" HasShadow="True" x:Name="frame1">
+            <StackLayout Orientation="Horizontal">
+                <StackLayout Spacing="0" HorizontalOptions="Start" Orientation="Horizontal">
+                    <Frame WidthRequest="70"
+                Padding="0" BackgroundColor="#FFFFFF" HasShadow="False">
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="PopMethod" NumberOfTapsRequired="1" />
+                        </Frame.GestureRecognizers>
+                        <Frame Padding="15,15,0,0" BackgroundColor="#FFFFFF" HasShadow="False">
+                            <StackLayout Spacing="0" HorizontalOptions="Start">
+                                <StackLayout Spacing="0">
+                                    <Image Source="arrow.png" HeightRequest="25" WidthRequest="25"
+                                    Margin="0"></Image>
+                                </StackLayout>
+                            </StackLayout>
+                        </Frame>
+                    </Frame>
+                </StackLayout>
+                <StackLayout VerticalOptions="Center" HorizontalOptions="CenterAndExpand" Margin="0,0,-50,0" WidthRequest="100">
+                    <Picker x:Name="picker1" Title="Группы" FontSize="17" ItemDisplayBinding="{Binding Naim}" 
+                            TextColor="#1F9FE2" ItemsSource="{Binding Groupss}" 
+                            SelectedIndexChanged="picker1_SelectedIndexChanged"></Picker>
+                </StackLayout>
+                <StackLayout VerticalOptions="Center" HorizontalOptions="StartAndExpand">
+                    <ImageButton Source="images.png" HeightRequest="25" WidthRequest="25" Clicked="ImageButton_Clicked"/>
+                </StackLayout>
+            </StackLayout>
+        </Frame>
+
+        <StackLayout  IsVisible="false" x:Name="stackLoad" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+            <Label x:Name="labelOne" TextColor="Black"
+               FontSize="21"/>
+            <Button x:Name="buttonOne" Text="Повторить" FontSize="20" BackgroundColor="#1F9FE2"
+                    Clicked="ButtonLoading" TextColor="#FFFFFF"/>
+        </StackLayout>
+        <StackLayout  IsVisible="false" x:Name="stackActivity" VerticalOptions="CenterAndExpand" 
+                      HorizontalOptions="CenterAndExpand">
+            <ActivityIndicator x:Name="activityInd" HeightRequest="80"
+                               WidthRequest="80" Color="#1F9FE2" ></ActivityIndicator>
+        </StackLayout>
+
+
+        <ScrollView Padding="10" x:Name="scroll1">
+            <StackLayout Spacing="25" HorizontalOptions="Center" VerticalOptions="Center">
+                <StackLayout Spacing="0" Padding="30,0,30,0">
+                    <Frame  BackgroundColor="#FFFFFF" WidthRequest="200" HeightRequest="45"  CornerRadius="20"
+                        Padding="0" BorderColor="#707070" Margin="10">
+                        <Label x:Name="labelDate" FontSize="12" TextColor="#707070" VerticalOptions="Center"
+                           HorizontalOptions="CenterAndExpand"></Label>
+                    </Frame>
+                </StackLayout>
+                
+                <StackLayout x:Name="stackLayoit1">
+                    <Frame BackgroundColor="#FFFFFF" Style="{StaticResource MainFrame}"  CornerRadius="8" Padding="0">
+                        <Frame Padding="0" BorderColor="#4A3F3F"  CornerRadius="8">
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="08:30&#10;-&#10;10:00" FontSize="14" BackgroundColor="#1F9FE2"
+                                            FontAttributes="Bold" Style="{StaticResource labelFrame}"/>
+                                <StackLayout HorizontalOptions="CenterAndExpand" Margin="5">
+                                    <Label x:Name="stackLayoit1Label1" TextColor="#707070" FontAttributes="Bold"
+                                     Style="{StaticResource labelBlock}"></Label>
+                                    <Label x:Name="stackLayoit1Label2" TextColor="#707070" Style="{StaticResource labelBlock}"></Label>
+                                    <Label x:Name="stackLayoit1Label3" TextColor="#707070" Style="{StaticResource labelBlock}"></Label>
+                                </StackLayout>
+                            </StackLayout>
+                        </Frame>
+                    </Frame>
+                </StackLayout>
+                
+                <StackLayout x:Name="stackLayoit2">
+                    <Frame BackgroundColor="#FFFFFF" Style="{StaticResource MainFrame}"  CornerRadius="8" Padding="0">
+                        <Frame Padding="0" BorderColor="#4A3F3F"  CornerRadius="8">
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="10:10&#10;-&#10;11:40" FontSize="14" BackgroundColor="#1F9FE2"
+                                            FontAttributes="Bold" Style="{StaticResource labelFrame}"/>
+                                <StackLayout HorizontalOptions="CenterAndExpand" Margin="5">
+                                    <Label x:Name="stackLayoit1Label4" FontAttributes="Bold"
+                                    TextColor="#707070" Style="{StaticResource labelBlock}"></Label>
+                                    <Label x:Name="stackLayoit1Label5" TextColor="#707070" Style="{StaticResource labelBlock}"></Label>
+                                    <Label x:Name="stackLayoit1Label6" TextColor="#707070" Style="{StaticResource labelBlock}"></Label>
+                                </StackLayout>
+                            </StackLayout>
+                        </Frame>
+                    </Frame>
+                </StackLayout>
+                
+                <StackLayout x:Name="stackLayoit3">
+                    <Frame BackgroundColor="#FFFFFF" Style="{StaticResource MainFrame}"  CornerRadius="8" Padding="0">
+                        <Frame Padding="0" BorderColor="#4A3F3F"  CornerRadius="8">
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="12:00&#10;-&#10;13:30" FontSize="14" BackgroundColor="#1F9FE2"
+                                            FontAttributes="Bold" Style="{StaticResource labelFrame}"/>
+                                <StackLayout HorizontalOptions="CenterAndExpand" Margin="5">
+                                    <Label x:Name="stackLayoit1Label7" FontAttributes="Bold"
+                                    TextColor="#707070" Style="{StaticResource labelBlock}"></Label>
+                                    <Label x:Name="stackLayoit1Label8" TextColor="#707070" Style="{StaticResource labelBlock}"></Label>
+                                    <Label x:Name="stackLayoit1Label9" TextColor="#707070" Style="{StaticResource labelBlock}"></Label>
+                                </StackLayout>
+                            </StackLayout>
+                        </Frame>
+                    </Frame>
+                </StackLayout>
+                
+                <StackLayout x:Name="stackLayoit4">
+                    <Frame BackgroundColor="#FFFFFF" Style="{StaticResource MainFrame}"  CornerRadius="8" Padding="0">
+                        <Frame Padding="0" BorderColor="#4A3F3F"  CornerRadius="8">
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="13:40&#10;-&#10;15:10" FontSize="14" BackgroundColor="#1F9FE2"
+                                            FontAttributes="Bold" Style="{StaticResource labelFrame}"/>
+                                <StackLayout HorizontalOptions="CenterAndExpand" Margin="5">
+                                    <Label x:Name="stackLayoit1Label10" FontAttributes="Bold"
+                                    TextColor="#707070" Style="{StaticResource labelBlock}"></Label>
+                                    <Label x:Name="stackLayoit1Label11" TextColor="#707070" Style="{StaticResource labelBlock}"></Label>
+                                    <Label x:Name="stackLayoit1Label12" TextColor="#707070" Style="{StaticResource labelBlock}"></Label>
+                                </StackLayout>
+                            </StackLayout>
+                        </Frame>
+                    </Frame>
+                </StackLayout>
+                
+                <StackLayout x:Name="stackLayoit5">
+                    <Frame BackgroundColor="#FFFFFF" Style="{StaticResource MainFrame}"  CornerRadius="8" Padding="0">
+                        <Frame Padding="0" BorderColor="#4A3F3F"  CornerRadius="8">
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="15:20&#10;-&#10;16:50" FontSize="14" BackgroundColor="#1F9FE2"
+                                            FontAttributes="Bold" Style="{StaticResource labelFrame}"/>
+                                <StackLayout HorizontalOptions="CenterAndExpand" Margin="5">
+                                    <Label x:Name="stackLayoit1Label13"  FontAttributes="Bold"
+                                    TextColor="#707070" Style="{StaticResource labelBlock}"></Label>
+                                    <Label x:Name="stackLayoit1Label14" TextColor="#707070" Style="{StaticResource labelBlock}"></Label>
+                                    <Label x:Name="stackLayoit1Label15" TextColor="#707070" Style="{StaticResource labelBlock}"></Label>
+                                </StackLayout>
+                            </StackLayout>
+                        </Frame>
+                    </Frame>
+                </StackLayout>
+                
+                <StackLayout x:Name="stackLayoit6">
+                    <Frame BackgroundColor="#FFFFFF" Style="{StaticResource MainFrame}"  CornerRadius="8" Padding="0">
+                        <Frame Padding="0" BorderColor="#4A3F3F"  CornerRadius="8">
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="17:00&#10;-&#10;18:30" FontSize="14" BackgroundColor="#1F9FE2"
+                                            FontAttributes="Bold" Style="{StaticResource labelFrame}"/>
+                                <StackLayout HorizontalOptions="CenterAndExpand" Margin="5">
+                                    <Label x:Name="stackLayoit1Label16" FontAttributes="Bold"
+                                    TextColor="#707070" Style="{StaticResource labelBlock}"></Label>
+                                    <Label x:Name="stackLayoit1Label17" TextColor="#707070" Style="{StaticResource labelBlock}"></Label>
+                                    <Label x:Name="stackLayoit1Label18" TextColor="#707070" Style="{StaticResource labelBlock}"></Label>
+                                </StackLayout>
+                            </StackLayout>
+                        </Frame>
+                    </Frame>
+                </StackLayout>
+                
+                <StackLayout x:Name="stackLayoit7">
+                    <Frame BackgroundColor="#FFFFFF" Style="{StaticResource MainFrame}"  CornerRadius="8" Padding="0">
+                        <Frame Padding="0" BorderColor="#4A3F3F"  CornerRadius="8">
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="18:40&#10;-&#10;20:10" FontSize="14" BackgroundColor="#1F9FE2"
+                                            FontAttributes="Bold" Style="{StaticResource labelFrame}"/>
+                           <StackLayout HorizontalOptions="CenterAndExpand" Margin="5">
+                                    <Label x:Name="stackLayoit1Label19" FontAttributes="Bold"
+                                    TextColor="#707070" Style="{StaticResource labelBlock}"></Label>
+                                    <Label x:Name="stackLayoit1Label20" TextColor="#707070" Style="{StaticResource labelBlock}"></Label>
+                                    <Label x:Name="stackLayoit1Label21" TextColor="#707070" Style="{StaticResource labelBlock}"></Label>
+                                </StackLayout>
+                            </StackLayout>
+                        </Frame>
+                    </Frame>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+        <Frame BackgroundColor="#FFFFFF" VerticalOptions="EndAndExpand" Padding="0" HeightRequest="60" HasShadow="True" x:Name="frame2">
+            <StackLayout Orientation="Horizontal" Spacing="20">
+                <StackLayout Spacing="0" HorizontalOptions="StartAndExpand">
+                    <Frame WidthRequest="110"
+                Padding="0" BackgroundColor="#FFFFFF" HasShadow="False" >
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="MyDatePickers" NumberOfTapsRequired="1" />
+                        </Frame.GestureRecognizers>
+                        <Frame Padding="25,5,0,0" BackgroundColor="#FFFFFF" HasShadow="False">
+                            <StackLayout Spacing="0">
+                                <DatePicker x:Name="MyDatePicker" IsVisible="False" DateSelected="MyDatePickerEvent"/>
+                                <StackLayout Spacing="0">
+                                    <Image Source="kalendar.png" HeightRequest="35" WidthRequest="35"
+                                    Margin="0,0,0,-2"></Image>
+                                    <Label HorizontalOptions="Center" FontSize="12" Text="Дата"
+                                   TextColor="#0065AA" Margin="0,0,5,10"></Label>
+                                </StackLayout>
+                            </StackLayout>
+                        </Frame>
+                    </Frame>
+                </StackLayout>
+                <StackLayout HorizontalOptions="CenterAndExpand">
+                    <Frame WidthRequest="110"
+                Padding="0" BackgroundColor="#FFFFFF" HasShadow="False" >
+                        <Frame Padding="0,5,0,0" BackgroundColor="#FFFFFF" HasShadow="False">
+                            <StackLayout Spacing="0">
+                                <StackLayout Spacing="0">
+                                    <Image Source="schedule.png" HeightRequest="35" WidthRequest="35"
+                                    Margin="0,0,0,-2"></Image>
+                                    <Label HorizontalOptions="Center" FontSize="12" Text="Расписание"
+                                   TextColor="#0065AA" Margin="0,0,5,10"></Label>
+                                </StackLayout>
+                            </StackLayout>
+                        </Frame>
+                    </Frame>
+                </StackLayout>
+            </StackLayout>
+        </Frame>
+    </StackLayout>
+</ContentPage>

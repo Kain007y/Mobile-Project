@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Schedule.MainPage"
+             BackgroundColor="#F1F1F1">
+
+    <StackLayout Spacing="{StaticResource PageSpacing}" HorizontalOptions="Center" VerticalOptions="Center">
+        <StackLayout  IsVisible="false" x:Name="stackLoad">
+            <Label x:Name="labelOne" TextColor="Black"
+               FontSize="21"/>
+            <Button x:Name="buttonOne" Text="Повторить" FontSize="20" BackgroundColor="#1F9FE2"
+                    Clicked="ButtonLoading" TextColor="#FFFFFF"/>
+        </StackLayout>
+        <StackLayout  IsVisible="false" x:Name="stackActivity">
+            <ActivityIndicator x:Name="activityInd" HeightRequest="80"
+                               WidthRequest="80" Color="#1F9FE2" ></ActivityIndicator>
+        </StackLayout>
+        <StackLayout x:Name="stackImage">
+            <Image Source="logo.png" Style="{StaticResource LogoImage}"></Image>
+        </StackLayout>
+        <StackLayout x:Name="stackFrame1">
+            <Frame BackgroundColor="#FFFFFF" Style="{StaticResource MainFrame}" CornerRadius="8" Padding="0">
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="Button_Clicked" NumberOfTapsRequired="1" />
+                </Frame.GestureRecognizers>
+                <Frame Padding="0" BorderColor="#4A3F3F"  CornerRadius="8">
+                    <StackLayout Spacing="0" Orientation="Horizontal">
+                        <StackLayout>
+                            <Image Source="studentIcon.png" Style="{StaticResource MainImage}" BackgroundColor="#1F9FE2"></Image>
+                        </StackLayout>
+                        <Label TextColor="#4A3F3F" 
+                               Text="Выберите этот раздел, если 
+                               хотите посмотреть 
+                               расписание своей группы"
+                               Style="{StaticResource MiniStyle}"></Label>
+                    </StackLayout>
+                </Frame>
+            </Frame>
+        </StackLayout>
+        <StackLayout x:Name="stackFrame2">
+            <Frame BackgroundColor="#FFFFFF" Style="{StaticResource MainFrame}" CornerRadius="8" Padding="0">
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="Button_SheduleTeachers" NumberOfTapsRequired="1" />
+                </Frame.GestureRecognizers>
+                <Frame Padding="0" BorderColor="#4A3F3F"  CornerRadius="8">
+                    <StackLayout Spacing="0" Orientation="Horizontal">
+                        <StackLayout>
+                            <Image Source="teacher.png" Style="{StaticResource MainImage}" BackgroundColor="#1F9FE2"></Image>
+                        </StackLayout>
+                        <Label TextColor="#4A3F3F"
+                               Text="Выберите этот раздел, если
+                               хотите посмотреть 
+                               расписание групп, в 
+                               которых вы преподаёте"
+                               Style="{StaticResource MiniStyle}"/>
+                    </StackLayout>
+                </Frame>
+            </Frame>
+        </StackLayout>
+        <StackLayout x:Name="stackFrame3">
+            <Frame BackgroundColor="#FFFFFF" Style="{StaticResource MainFrame}" CornerRadius="8" Padding="0">
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" NumberOfTapsRequired="1" />
+                </Frame.GestureRecognizers>
+                <Frame Padding="0" BorderColor="#4A3F3F"  CornerRadius="8">
+                    <StackLayout Spacing="0" Orientation="Horizontal">
+                        <StackLayout>
+                            <Image Source="auditor.png" Style="{StaticResource MainImage}" BackgroundColor="#1F9FE2"></Image>
+                        </StackLayout>
+                        <Label TextColor="#4A3F3F" 
+                               Text="Выберите этот раздел, если
+                               хотите посмотреть расписание
+                               групп, в выбранной аудитории"
+                               Style="{StaticResource MiniStyle}"/>
+                    </StackLayout>
+                </Frame>
+            </Frame>
+        </StackLayout>
+    </StackLayout>
+
+
+</ContentPage>

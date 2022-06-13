@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ResourceDictionary xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="Schedule.Style.SmallDevicesStyle">
+
+    <OnIdiom  x:TypeArguments="x:Double" Tablet="20" Phone="20" x:Key="PageSpacing" />
+
+    <Style TargetType="Frame" x:Key="MainFrame">
+        <Setter Property="HeightRequest" Value="90"/>
+        <Setter Property="WidthRequest" Value="280"/>
+        <Setter Property="HorizontalOptions" Value="Center"/>
+        <Setter Property="VerticalOptions" Value="Center"/>
+    </Style>
+
+    <Style TargetType="Image" x:Key="MainImage">
+        <Setter Property="HeightRequest" Value="100"/>
+        <Setter Property="WidthRequest" Value="90"/>
+        <Setter Property="HorizontalOptions" Value="Start"/>
+    </Style>
+
+    <Style TargetType="Label" x:Key="MiniStyle">
+        <Setter Property="FontSize" Value="11"/>
+        <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+        <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+        <Setter Property="Padding" Value="10,0,0,0" />
+    </Style>
+
+    <Style TargetType="Label" x:Key="labelFrame">
+        <Setter Property="HorizontalTextAlignment" Value="Center"/>
+        <Setter Property="VerticalTextAlignment" Value="Center" />
+        <Setter Property="TextColor" Value="#FFFFFF" />
+        <Setter Property="WidthRequest" Value="80"/>
+    </Style>
+
+    <Style TargetType="Label" x:Key="labelBlock">
+        <Setter Property="FontSize" Value="11"/>
+    </Style>
+
+    <Style TargetType="Image" x:Key="LogoImage">
+        <Setter Property="HeightRequest" Value="160"/>
+    </Style>
+
+</ResourceDictionary>
